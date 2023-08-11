@@ -27,6 +27,10 @@ mongoose.connect(process.env.MONGO_URL, {useNewUrlParser:true}).then( () => {
     console.log(e)
 });
 
+app.get('/', (req,res)=>{
+    res.send("API works");
+});
+
 app.use("/images", express.static(path.join(__dirname  , "public/images")));
 
 //middlewares:
